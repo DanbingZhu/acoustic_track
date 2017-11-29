@@ -1,0 +1,5 @@
+<launch>
+	<node name="acoustic_magic_uart_node" pkg="access_local_microphone" type="acoustic_magic_uart_node"/>
+	<node name="acoustic_track" pkg="acoustic_track" type="turn_head_to_source.py" output="screen"/>
+	<node name="direction_marker_display" pkg="rviz" type="rviz" args="-d $(find acoustic_track)/launch/marker.rviz"/>
+</launch>
